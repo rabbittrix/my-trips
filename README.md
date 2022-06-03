@@ -2,8 +2,6 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-# Welcome to my trips, do you like to travel, came together with us.
-
 First, run the development server:
 
 ```bash
@@ -24,3 +22,11 @@ yarn add next-pwa (to install)
 yarn build
 
 yarn start
+```
+
+## Welcome to my trips, do you like to travel, came together with us?
+
+I'm going to use Leaflet in this work, which is an open-souece library, different from GoogleMaps.
+React-Leaflet is a wrapper for Leaflet, which is a JavaScript library for interactive maps.
+
+
