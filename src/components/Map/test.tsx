@@ -21,4 +21,3 @@ describe('<Map/>', () => {
     expect(screen.getByTitle(/lisbon/i)).toBeInTheDocument()
   })
 })
-

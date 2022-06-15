@@ -28,3 +28,4 @@ const Map = ({ places }: MapProps) => (
     })}
   </MapContainer>
 )
+export default Map

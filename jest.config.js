@@ -7,5 +7,9 @@ module.exports = {
   modulePaths: ['<rootDir>/src/'],
   transform: {
     '^.+\\.(js|jsx|ts|tsx)$': ['babel-jest', { presets: ['next/babel'] }]
+  },
+  moduleNameMapper: {
+    'react-leaflet':
+      '<rootDir>/node_modules/react-leaflet/dist/react-leaflet.min.js'
   }
 }
