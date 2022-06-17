@@ -29,4 +29,18 @@ yarn start
 I'm going to use Leaflet in this work, which is an open-souece library, different from GoogleMaps.
 React-Leaflet is a wrapper for Leaflet, which is a JavaScript library for interactive maps.
 
+## Create a CMS
 
+* https://app.graphcms.com/
+
+* Free CMS for React.js, works is good.
+
+## NextJS commands that are most used
+
+* getStaticPaths => is used to generate the urls in build time /about, /trip/lisbon
+
+* getStaticProps => is used to fetch data from the page (props) - build time - static
+
+* getServerSideProps => serves to fetch data from the page (props) - runtime - every request     (bundle stays on the server)
+
+* getInitialProps => it is used to fetch data from the page (props) - runtime - every request (bundle also comes to the client) - hydrate (it is almost in disuse)
