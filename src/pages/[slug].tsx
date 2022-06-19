@@ -1,9 +1,9 @@
-import client from 'graphql/client'
-import { GetPageBySlugQuery, GetPagesQuery } from 'graphql/generated/graphql'
-import { GET_PAGES, GET_PAGE_BY_SLUG } from 'graphql/queries'
 import { GetStaticProps } from 'next'
+import client from 'graphql/client'
+import { GET_PAGES, GET_PAGE_BY_SLUG } from 'graphql/queries'
 import { useRouter } from 'next/router'
 import PageTemplate, { PageTemplateProps } from 'templates/Pages'
+import { GetPageBySlugQuery, GetPagesQuery } from 'graphql/generated/graphql'
 
 export default function Page({ heading, body }: PageTemplateProps) {
   const router = useRouter()
@@ -31,6 +31,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   if (!page) return { notFound: true }
 
   return {
+    revalidate: 60,
     props: {
       heading: page.heading,
       body: page.body.html

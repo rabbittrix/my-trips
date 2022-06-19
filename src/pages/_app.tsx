@@ -1,32 +1,50 @@
-import type { AppProps } from 'next/app'
+import { AppProps } from 'next/app'
 import Head from 'next/head'
-import GlobalStyles from 'styles/global'
+import NextNprogress from 'nextjs-progressbar'
 
-export default function App({ Component, pageProps }: AppProps) {
+import { DefaultSeo } from 'next-seo'
+import SEO from '../../next-seo.config'
+
+import GlobalStyles from 'styles/global'
+import { StickyNote } from 'components/StickyNote'
+
+function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>my trips</title>
-        <link rel="shortcut icon" href="/img/wellaLogo.png" />
-        <link rel="apple-touch-icon" href="/img/wellaLogo.png" />
+        <meta
+          name="google-site-verification"
+          content="8kDtWUmUQEh7QXoj_shRaxcgYAVpHs_YQ7TeniN0kmI"
+        />
+        <link rel="shortcut icon" href="/img/icon-512.png" />
+        <link rel="apple-touch-icon" href="/img/icon-512.png" />
         <link rel="manifest" href="/manifest.json" />
         <link
           rel="stylesheet"
-          href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
-          integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+          href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+          integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
           crossOrigin=""
         />
-        <meta
-          name="theme-color"
-          content="-webkit-linear-gradient #06092b, #cccccc"
-        />
-        <meta
-          name="description"
-          content="A simple project to show my trips in the world."
-        />
       </Head>
+      <DefaultSeo {...SEO} />
       <GlobalStyles />
+      <NextNprogress
+        color="#c49206"
+        startPosition={0.3}
+        stopDelayMs={200}
+        height={3}
+      />
       <Component {...pageProps} />
+
+      <StickyNote>
+        <p>
+          Hire a good professional to manage your projects, get out of
+          outsourcing.{' '}
+          <a href="https://github.com/rabbittrix/my-trips">Learn Next.JS</a>
+        </p>
+      </StickyNote>
     </>
   )
 }
+
+export default App
