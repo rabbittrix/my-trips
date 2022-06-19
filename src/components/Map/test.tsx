@@ -1,23 +1,42 @@
 import { render, screen } from '@testing-library/react'
+
 import Map from '.'
 
-describe('<Map/>', () => {
-  it('shoud render without any marker', () => {
+describe('<Map />', () => {
+  it('should render without any marker', () => {
     render(<Map />)
 
     expect(
-      screen.getByRole('link', { name: /a js library for interactive maps/i })
+      screen.getByRole('link', {
+        name: /a js library for interactive maps/i
+      })
     ).toBeInTheDocument()
   })
 
-  it('shoud render with a marker in correct place', () => {
+  it('should render with the marker in correct place', () => {
     const place = {
       id: '1',
-      name: 'Lisbon',
-      slug: 'lisbon',
-      location: { lat: 0, long: 0 }
+      name: 'Petrópolis',
+      slug: 'petropolis',
+      location: {
+        latitude: 0,
+        longitude: 0
+      }
     }
-    render(<Map places={[place]} />)
-    expect(screen.getByTitle(/lisbon/i)).toBeInTheDocument()
+
+    const placeTwo = {
+      id: '2',
+      name: 'Reykjavik',
+      slug: 'reykjavik',
+      location: {
+        latitude: 129,
+        longitude: -50
+      }
+    }
+
+    render(<Map places={[place, placeTwo]} />)
+
+    expect(screen.getByTitle(/petrópolis/i)).toBeInTheDocument()
+    expect(screen.getByTitle(/reykjavik/i)).toBeInTheDocument()
   })
 })
