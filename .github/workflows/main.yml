@@ -1,5 +1,5 @@
-name: Boilerplate_NextJS
-on:  
+name: My-Trips
+on:
   workflow_dispatch:
 jobs:
   build:
@@ -11,25 +11,25 @@ jobs:
 
   deploy-dev:
     runs-on: ubuntu-latest
-    environment: 
+    environment:
       name: develop
     needs: build
     steps:
       - name: Run a one-line script
         run: echo Deploy develop
-        
+
   deploy-hmg:
     runs-on: ubuntu-latest
-    environment: 
+    environment:
       name: hmg
     needs: deploy-dev
     steps:
       - name: Run a one-line script
         run: echo Deploy hmg
-  
+
   deploy-prod:
     runs-on: ubuntu-latest
-    environment: 
+    environment:
       name: hmg
     needs: deploy-hmg
     steps:
