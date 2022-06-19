@@ -1,4 +1,4 @@
-name: Boilerplate_NextJS
+name: My-Trips
 on:  
   workflow_dispatch:
 jobs:
